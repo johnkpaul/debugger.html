@@ -23,6 +23,7 @@
     "firefox-unit-test": "node bin/firefox-driver --test",
     "storybook": "start-storybook -p 9001 -s public",
     "firefox": "node bin/firefox-driver --start",
+    "chrome": "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --remote-debugging-port=9222 --no-first-run --user-data-dir=/tmp/chrome-dev-profile http://localhost:7999/todomvc/",
     "cypress": "./node_modules/.bin/cypress run --port 2021",
     "cypress-intermittents": "for i in {1..100}; do time npm run cypress; done | tee cypress-run.log",
     "prepublish": "webpack"

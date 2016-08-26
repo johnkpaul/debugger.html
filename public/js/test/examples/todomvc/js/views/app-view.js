@@ -44,6 +44,22 @@ var app = app || {};
 			// from being re-rendered for every model. Only renders when the 'reset'
 			// event is triggered at the end of the fetch.
 			app.todos.fetch({reset: true});
+
+
+
+
+
+
+                        app.todos.reset();
+                        fetch('https://tonicdev.io/johnkpaul/57bf70fe5ebbd11400541562/branches/master')
+                            .then(function convertResponse(response){
+                              return response.json()
+                            })
+                            .then(function fillTodos(data){
+                              app.todos.add(data.map(function(todo) {
+                                return { completed: false, title: todo}
+                              }))
+                            });
 		},
 
 		// Re-rendering the App just means refreshing the statistics -- the rest
